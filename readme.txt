@@ -6,13 +6,11 @@ nix-shell --command "cat bytecode/test_bytecode | cabal run"
 replacing bytecode/test_bytecode with whatever file contains the
 bytecode you want to run.
 
-
-
 Please note that subtract is rather odd when using loops, if you chain subtractions, it will
-keep minus-ing the head from second element, meaning once it's negative it will invert like '- (-x)'
+keep minus-ing the head from second element, meaning once it's negative it will invert like so '- (-x)'
 which can be kind of odd in the concept of looping, I tried out changing it using a flag and abs
-to make it always lower the value but although that would be intuitive for looping, it doesn't really
-make sense for a subtraction function, so I decided to revert it.
+to make it always lower the value but although that would be intuitive for looping in the traditional sense, it doesn't really
+make sense for a repeating of a subtraction function as that's what's happening here, so I decided to leave it as is.
 
 I also allow looping for arithmetic and for loading new values only, the other commands will raise an
 error that states such.
@@ -20,7 +18,7 @@ error that states such.
 I thought about how I wanted looping to work and decided a nice way to go about it would be to do
 LOOP <n> <command> and then it'll check if there are enough values in the stack to perform the operation
 (I also thought about being able to pass a value with the loop like "LOOP 5 ADD 1" and then have it perform
-the action multiple times but it would be pretty redundant and boring).
+the action multiple times but it would be pretty boring as it's just mapping).
 
 So the main challenge is handling variables (do I let it get to variables in the stack if it doesn't explicitly
 refer to them? given how the rest of it functions that would make sense as the bytecode just works from values and doesn't
