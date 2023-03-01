@@ -9,8 +9,9 @@ bytecode you want to run.
 Please note that subtract is rather odd when using loops, if you chain subtractions, it will
 keep minus-ing the head from second element, meaning once it's negative it will invert like so '- (-x)'
 which can be kind of odd in the concept of looping, I tried out changing it using a flag and abs
-to make it always lower the value but although that would be intuitive for looping in the traditional sense, it doesn't really
-make sense for a repeating of a subtraction function as that's what's happening here, so I decided to leave it as is.
+to make it always lower the value but although that would be intuitive for looping in the traditional
+sense, it doesn't really make sense for a repeating of a subtraction function as that's what's happening
+here, so I decided to leave it as is.
 
 I also allow looping for arithmetic and for loading new values only, the other commands will raise an
 error that states such.
