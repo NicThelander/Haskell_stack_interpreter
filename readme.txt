@@ -1,3 +1,5 @@
+A project I did during an internship, had to make a stack structure and be able to set and load variables, use literal values, perform arithmetic and loop.
+
 ADDING LOOP FUNCTIONALITY (also includes the cabal2nix, how I did it will be listed at the bottom of this file):
 
 I took out the web part of the initial program so we can just check the looping on a file for
